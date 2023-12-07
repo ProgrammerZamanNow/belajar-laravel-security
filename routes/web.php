@@ -19,6 +19,8 @@ Route::get("/users/current", [\App\Http\Controllers\UserController::class, "curr
     ->middleware(["auth"]);
 Route::get("/api/users/current", [\App\Http\Controllers\UserController::class, "current"])
     ->middleware(["auth:token"]);
+Route::get("/simple-api/users/current", [\App\Http\Controllers\UserController::class, "current"])
+    ->middleware(["auth:simple-token"]);
 
 Route::get('/', function () {
     return view('welcome');
