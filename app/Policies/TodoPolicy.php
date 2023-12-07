@@ -8,6 +8,14 @@ use Illuminate\Auth\Access\Response;
 
 class TodoPolicy
 {
+
+    public function before(User $user, string $ability)
+    {
+        if ($user->name == "superadmin") {
+            return true;
+        }
+    }
+
     /**
      * Determine whether the user can view any models.
      */
