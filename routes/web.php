@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post("/api/todo", [\App\Http\Controllers\TodoController::class, "create"]);
+
 Route::get("/users/login", [\App\Http\Controllers\UserController::class, "login"]);
 Route::get("/users/current", [\App\Http\Controllers\UserController::class, "current"])
     ->middleware(["auth"]);
